@@ -18,21 +18,25 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun HomeScreen() {
-    val genres = listOf("Romance", "Drama", "Metropop", "Horror", "Sejarah", "Fantasi", "Thriller", "Self Improvement", "Favorite", "Komedi")
+    val genres = listOf(
+        "Romance", "Drama", "Metropop", "Horror", "Sejarah",
+        "Fantasi", "Thriller", "Self Improvement", "Favorite", "Komedi"
+    )
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().padding(horizontal = 20.dp) // Mengatur padding horizontal
     ) {
         item {
             LazyRow(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                modifier = Modifier.fillMaxWidth().padding(vertical = 18.dp),
+                horizontalArrangement = Arrangement.spacedBy(18.dp),
+                verticalAlignment = Alignment.CenterVertically // Mengatur alignment vertical
             ) {
                 items(genres) { genre ->
                     Box(
                         modifier = Modifier
                             .background(Color.LightGray)
-                            .padding(8.dp)
+                            .padding(12.dp)
                     ) {
                         Text(text = genre, color = Color.Black, fontSize = 16.sp)
                     }
@@ -41,11 +45,11 @@ fun HomeScreen() {
         }
         items(genres) { genre ->
             Row(
-                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                modifier = Modifier.fillMaxWidth().padding(vertical = 14.dp), // Mengatur padding vertical
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.placeholder),
+                    painter = painterResource(id = R.drawable.cover_1),
                     contentDescription = null,
                     modifier = Modifier.size(64.dp),
                     contentScale = ContentScale.Crop

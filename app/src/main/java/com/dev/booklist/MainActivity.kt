@@ -56,9 +56,9 @@ fun TopAppBar(navController: NavHostController) {
 fun getScreenTitle(route: String?): String {
     return when (route) {
         "home" -> "My List Book"
-        "grid" -> "My Book"
+        "book" -> "My Book"
         "about" -> "About"
-        else -> "Book List App"
+        else -> "My Book"
     }
 }
 
@@ -75,8 +75,8 @@ fun BottomNavigationBar(navController: NavHostController) {
         NavigationBarItem(
             selected = currentRoute == "grid",
             onClick = { navController.navigate("grid") },
-            icon = { Icon(Icons.Default.GridOn, contentDescription = "Grid") },
-            label = { Text("Grid") }
+            icon = { Icon(Icons.Default.GridOn, contentDescription = "Book") },
+            label = { Text("Book") }
         )
         NavigationBarItem(
             selected = currentRoute == "about",

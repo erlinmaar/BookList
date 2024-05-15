@@ -26,7 +26,7 @@ fun GridScreen() {
                 contentDescription = null,
                 modifier = Modifier
                     .padding(8.dp)
-                    .size(150.dp), // Gunakan Modifier.size() dengan benar
+                    .size(200.dp), // Gunakan Modifier.size() dengan benar
                 contentScale = ContentScale.Crop
             )
         }
